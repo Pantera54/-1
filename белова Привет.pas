@@ -12,9 +12,9 @@ var
 
 begin
   clrscr;
-  write('Порядок: ');
+  write('ГЏГ®Г°ГїГ¤Г®ГЄ: ');
   readln(n);
-  writeln('Введите коэффициенты системы и свободные члены');
+  writeln('Г‚ГўГҐГ¤ГЁГІГҐ ГЄГ®ГЅГґГґГЁГ¶ГЁГҐГ­ГІГ» Г±ГЁГ±ГІГҐГ¬Г» ГЁ Г±ГўГ®ГЎГ®Г¤Г­Г»ГҐ Г·Г«ГҐГ­Г»');
   for i := 1 to n do
   begin
     for j := 1 to n do
@@ -26,7 +26,7 @@ begin
     Writeln('b[', i, ']= ');
     readln(b[i]);
   end;
-  for k := 1 to n do { прямой ход Гаусса }
+  for k := 1 to n do { ГЇГ°ГїГ¬Г®Г© ГµГ®Г¤ ГѓГ ГіГ±Г±Г  }
   begin
     for j := k + 1 to n do
     begin
@@ -38,7 +38,7 @@ begin
       b[j] := b[j] - r * b[k];
     end;
   end;
-  for k := n downto 1 do { обратный ход Гаусса }
+  for k := n downto 1 do { Г®ГЎГ°Г ГІГ­Г»Г© ГµГ®Г¤ ГѓГ ГіГ±Г±Г  }
   begin
     r := 0;
     for j := k + 1 to n do
@@ -48,11 +48,11 @@ begin
     end;
     x[k] := (b[k] - r) / a[k, k];
   end;
-  writeln('Корни системы:');
+  writeln('ГЉГ®Г°Г­ГЁ Г±ГЁГ±ГІГҐГ¬Г»:');
   for i := 1 to n do
     write('x[', i, ']=', x[i]:0:2, '   ');
   writeln;
-  writeln('Проверка в соответствии с матрицей B: ');
+  writeln('ГЏГ°Г®ГўГҐГ°ГЄГ  Гў Г±Г®Г®ГІГўГҐГІГ±ГІГўГЁГЁ Г± Г¬Г ГІГ°ГЁГ¶ГҐГ© B: ');
 
   for i:=1 to n do
    begin
